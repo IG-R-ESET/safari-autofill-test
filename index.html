@@ -95,13 +95,15 @@
       placeholder="Re-enter password" 
     />
 
-    <label for="recovery-email">Recovery Email (optional)</label>
+    <label for="recovery">Password Recovery (optional)</label>
     <input 
-      type="email" 
-      id="recovery-email" 
-      name="recovery_email" 
-      autocomplete="off" 
-      placeholder="For account recovery" 
+      type="text"
+      id="recovery"
+      name="password_recovery"
+      inputmode="email"
+      pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
+      placeholder="e.g. you@example.com"
+      autocomplete="off"
     />
 
     <button type="submit">Sign Up</button>
