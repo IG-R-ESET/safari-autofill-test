@@ -102,7 +102,16 @@
       placeholder="Re-enter password" 
     />
 
-    <!-- Hidden dummy email field to help Safari autofill logic -->
+    <label for="recovery-email">Password Recovery (optional)</label>
+    <input 
+      type="email" 
+      id="recovery-email" 
+      name="recovery_email" 
+      autocomplete="off" 
+      placeholder="For password recovery only" 
+    />
+
+    <!-- Hidden dummy email field to satisfy Safari -->
     <input 
       type="email" 
       class="hidden"
