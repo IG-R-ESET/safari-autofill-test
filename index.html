@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sign Up Test</title>
+  <title>Sign In / Sign Up Test</title>
   <style>
     body {
       font-family: sans-serif;
@@ -43,15 +43,23 @@
     }
     h2 {
       text-align: center;
-      margin-bottom: 1.5rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Unified Sign Up Form -->
-  <form action="/signup" method="POST" autocomplete="off">
-    <h2>Create Your Account</h2>
+  <!-- Sign In Form -->
+  <form action="/login" method="POST" autocomplete="on">
+    <h2>Sign In</h2>
+
+    <label for="name">Name</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="user_display" 
+      autocomplete="off" 
+      placeholder="Your name" 
+    />
 
     <label for="username">Username</label>
     <input 
@@ -67,9 +75,16 @@
       type="password" 
       id="password" 
       name="password" 
-      autocomplete="new-password" 
-      placeholder="Create a password" 
+      autocomplete="current-password" 
+      placeholder="Your password" 
     />
+
+    <button type="submit">Sign In</button>
+  </form>
+
+  <!-- Sign Up Form -->
+  <form action="/signup" method="POST" autocomplete="off">
+    <h2>Complete Sign Up</h2>
 
     <label for="confirm-password">Confirm Password</label>
     <input 
@@ -80,15 +95,13 @@
       placeholder="Re-enter password" 
     />
 
-    <label for="recovery">Password Recovery (optional)</label>
+    <label for="recovery-email">Recovery Email (optional)</label>
     <input 
-      type="text"
-      id="recovery"
-      name="password_recovery"
-      inputmode="email"
-      pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
-      placeholder="e.g. you@example.com"
-      autocomplete="off"
+      type="email" 
+      id="recovery-email" 
+      name="recovery_email" 
+      autocomplete="off" 
+      placeholder="For account recovery" 
     />
 
     <button type="submit">Sign Up</button>
