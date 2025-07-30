@@ -44,6 +44,13 @@
     h2 {
       text-align: center;
     }
+    .hidden {
+      position: absolute;
+      left: -9999px;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
@@ -95,15 +102,13 @@
       placeholder="Re-enter password" 
     />
 
-    <label for="password-recovery">Password Recovery (optional)</label>
+    <!-- Hidden dummy email field to help Safari autofill logic -->
     <input 
-      type="text"
-      id="password-recovery"
-      name="password_recovery"
-      inputmode="email"
-      pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
-      autocomplete="off"
-      placeholder="you@example.com"
+      type="email" 
+      class="hidden"
+      tabindex="-1"
+      autocomplete="email"
+      name="dummy_email"
     />
 
     <button type="submit">Sign Up</button>
