@@ -4,23 +4,19 @@
   <meta charset="UTF-8" />
   <title>Safari Autofill Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body style="font-family:sans-serif; padding:2rem; background:#f4f4f4;">
-  <h2>Sign Up Form (Safari Autofill Test)</h2>
-  <form action="/" method="POST" autocomplete="on">
-    <label for="signup_username">Username</label><br/>
-    <input type="text" name="signup_username" id="signup_username" autocomplete="username" placeholder="username" required><br/><br/>
-    
-    <label for="email">Email</label><br/>
-    <input type="email" name="email" id="email" autocomplete="email" placeholder="email@example.com"><br/><br/>
-    
-    <label for="password">Password</label><br/>
-    <input type="password" name="password" id="password" autocomplete="new-password" placeholder="Create a password" required><br/><br/>
-    
-    <label for="confirm_password">Confirm Password</label><br/>
-    <input type="password" name="confirm_password" id="confirm_password" autocomplete="new-password" placeholder="Repeat password" required><br/><br/>
-    
-    <button type="submit">Submit</button>
-  </form>
-</body>
-</html>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #f5f5f5;
+    }
+    label {
+      display: block;
+      margin-top: 1.5rem;
+      font-weight: bold;
+    }
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 400px;
+      margin-top:
