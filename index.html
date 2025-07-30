@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keychain Icon Test</title>
+  <title>Keychain Suppression Test</title>
   <style>
     body {
       font-family: sans-serif;
@@ -27,10 +27,10 @@
 </head>
 <body>
 
-  <h2>Test Form – Hide Keychain Icon</h2>
+  <h2>Test Form – Suppress Keychain Icon</h2>
 
   <form autocomplete="off">
-    <!-- Name field with autocomplete off -->
+    <!-- Display Name -->
     <label for="display_name">Display Name</label>
     <input 
       type="text"
@@ -39,17 +39,16 @@
       autocomplete="off"
       placeholder="No key icon expected" />
 
-    <!-- Email field with trick autocomplete off -->
-    <label for="recovery_address">Recovery Email (optional)</label>
+    <!-- Recovery Contact (previously email) -->
+    <label for="recovery_contact">Recovery Contact</label>
     <input 
       type="text"
-      id="recovery_address"
-      name="recovery_address"
-      inputmode="email"
+      id="recovery_contact"
+      name="recovery_contact"
       autocomplete="off"
       placeholder="No key icon expected" />
 
-    <!-- Username field, disguised -->
+    <!-- Tag / Handle -->
     <label for="user_tag">Tag / Handle</label>
     <input 
       type="text"
@@ -59,7 +58,7 @@
       autocapitalize="off"
       placeholder="No key icon expected" />
     
-    <!-- Password field, will show key icon -->
+    <!-- Password -->
     <label for="password">Password</label>
     <input 
       type="password"
@@ -68,7 +67,7 @@
       autocomplete="new-password"
       placeholder="Key icon expected here" />
 
-    <!-- Confirm Password field -->
+    <!-- Confirm Password -->
     <label for="confirm">Confirm Password</label>
     <input 
       type="password"
