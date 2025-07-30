@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Test Form – Name, Username, Email</title>
+  <title>Keychain Trigger Test</title>
   <style>
     body {
       font-family: sans-serif;
-      background: #f9f9f9;
       padding: 2rem;
+      background: #f4f4f4;
     }
+
     form {
       max-width: 400px;
       margin: auto;
       background: white;
       padding: 2rem;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
+
     label {
       display: block;
       margin-bottom: 0.3rem;
-      font-size: 0.95rem;
-      color: #333;
+      font-size: 0.9rem;
     }
+
     input {
       width: 100%;
       padding: 0.6rem;
@@ -32,6 +34,7 @@
       border-radius: 4px;
       font-size: 1rem;
     }
+
     button {
       width: 100%;
       padding: 0.8rem;
@@ -42,20 +45,29 @@
       cursor: pointer;
       font-size: 1rem;
     }
+
+    .visually-hidden {
+      position: absolute;
+      left: -9999px;
+    }
+
+    h2 {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
 
   <form action="/test" method="POST" autocomplete="on">
-    <h2 style="text-align:center;">Test Form</h2>
+    <h2>Account Info</h2>
 
     <label for="name">Name</label>
     <input 
       type="text" 
       id="name" 
-      name="name" 
+      name="user_display" 
       autocomplete="off" 
-      placeholder="Your full name" 
+      placeholder="Your name" 
     />
 
     <label for="username">Username</label>
@@ -64,7 +76,7 @@
       id="username" 
       name="username" 
       autocomplete="username" 
-      placeholder="Choose a username" 
+      placeholder="Your username" 
     />
 
     <label for="email">Email</label>
@@ -73,7 +85,19 @@
       id="email" 
       name="email" 
       autocomplete="email" 
-      placeholder="user@example.com" 
+      placeholder="your@email.com" 
+    />
+
+    <!-- Hidden password field -->
+    <input 
+      type="password" 
+      name="password" 
+      autocomplete="new-password" 
+      value="fakepass" 
+      class="visually-hidden" 
+      readonly 
+      tabindex="-1" 
+      aria-hidden="true"
     />
 
     <button type="submit">Submit</button>
