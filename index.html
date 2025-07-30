@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sign Up - Test Autofill</title>
+  <title>Sign In / Sign Up Test</title>
   <style>
     body {
       font-family: sans-serif;
       padding: 2rem;
-      background: #f4f4f4;
+      background: #f9f9f9;
     }
-    .container {
+    form {
       max-width: 400px;
-      margin: auto;
+      margin: 2rem auto;
       background: white;
       padding: 2rem;
       border-radius: 8px;
@@ -38,65 +38,74 @@
       color: white;
       border: none;
       border-radius: 4px;
-      font-size: 1rem;
       cursor: pointer;
-      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    h2 {
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Create Your Account</h2>
 
-    <!-- Autofill-optimised visible fields -->
-    <form id="sign-in-form" action="javascript:void(0);" autocomplete="on">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" autocomplete="name" placeholder="Full Name" />
+  <!-- Sign In Form -->
+  <form action="/login" method="POST" autocomplete="on">
+    <h2>Sign In</h2>
 
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" autocomplete="username" placeholder="Choose a username" />
+    <label for="name">Name</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="user_display" 
+      autocomplete="off" 
+      placeholder="Your name" 
+    />
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" autocomplete="new-password" placeholder="Create a password" />
-    </form>
+    <label for="username">Username</label>
+    <input 
+      type="text" 
+      id="username" 
+      name="username" 
+      autocomplete="username" 
+      placeholder="Your username" 
+    />
 
-    <!-- Actual submission form -->
-    <form id="sign-up-form" action="/signup" method="POST" autocomplete="off">
-      <label for="confirm-password">Confirm Password</label>
-      <input type="password" id="confirm-password" name="confirm_password" autocomplete="new-password" placeholder="Re-enter password" />
+    <label for="password">Password</label>
+    <input 
+      type="password" 
+      id="password" 
+      name="password" 
+      autocomplete="current-password" 
+      placeholder="Your password" 
+    />
 
-      <label for="recovery-email">Recovery Email (optional)</label>
-      <input type="email" id="recovery-email" name="recovery_email" autocomplete="off" placeholder="Email for recovery" />
+    <button type="submit">Sign In</button>
+  </form>
 
-      <div id="hidden-fields"></div>
+  <!-- Sign Up Form -->
+  <form action="/signup" method="POST" autocomplete="off">
+    <h2>Complete Sign Up</h2>
 
-      <button type="submit" id="pay-button">PAY</button>
-    </form>
-  </div>
+    <label for="confirm-password">Confirm Password</label>
+    <input 
+      type="password" 
+      id="confirm-password" 
+      name="confirm_password" 
+      autocomplete="new-password" 
+      placeholder="Re-enter password" 
+    />
 
-  <script>
-    document.getElementById("pay-button").addEventListener("click", function(event) {
-      event.preventDefault();
+    <label for="recovery-email">Recovery Email (optional)</label>
+    <input 
+      type="email" 
+      id="recovery-email" 
+      name="recovery_email" 
+      autocomplete="off" 
+      placeholder="For account recovery" 
+    />
 
-      const signInForm = document.getElementById("sign-in-form");
-      const signUpForm = document.getElementById("sign-up-form");
-      const hiddenFieldsContainer = document.getElementById("hidden-fields");
+    <button type="submit">Sign Up</button>
+  </form>
 
-      hiddenFieldsContainer.innerHTML = "";
-
-      ["name", "username", "password"].forEach(id => {
-        const input = document.getElementById(id);
-        if (input && input.value.trim() !== "") {
-          const hidden = document.createElement("input");
-          hidden.type = "hidden";
-          hidden.name = input.name;
-          hidden.value = input.value;
-          hiddenFieldsContainer.appendChild(hidden);
-        }
-      });
-
-      signUpForm.submit();
-    });
-  </script>
 </body>
 </html>
