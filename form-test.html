@@ -46,11 +46,6 @@
       font-size: 1rem;
     }
 
-    .visually-hidden {
-      position: absolute;
-      left: -9999px;
-    }
-
     h2 {
       text-align: center;
     }
@@ -58,16 +53,16 @@
 </head>
 <body>
 
-  <form action="/test" method="POST" autocomplete="on">
-    <h2>Account Info</h2>
+  <form action="/signup" method="POST" autocomplete="on">
+    <h2>Create Account</h2>
 
     <label for="name">Name</label>
     <input 
       type="text" 
       id="name" 
-      name="user_display" 
-      autocomplete="off" 
-      placeholder="Your name" 
+      name="name" 
+      autocomplete="name" 
+      placeholder="Full name" 
     />
 
     <label for="username">Username</label>
@@ -76,7 +71,7 @@
       id="username" 
       name="username" 
       autocomplete="username" 
-      placeholder="Your username" 
+      placeholder="your_username" 
     />
 
     <label for="email">Email</label>
@@ -85,22 +80,19 @@
       id="email" 
       name="email" 
       autocomplete="email" 
-      placeholder="your@email.com" 
+      placeholder="user@example.com" 
     />
 
-    <!-- Hidden password field -->
+    <label for="password">Password</label>
     <input 
       type="password" 
+      id="password" 
       name="password" 
       autocomplete="new-password" 
-      value="fakepass" 
-      class="visually-hidden" 
-      readonly 
-      tabindex="-1" 
-      aria-hidden="true"
+      placeholder="Create a password" 
     />
 
-    <button type="submit">Submit</button>
+    <button type="submit">Sign Up</button>
   </form>
 
 </body>
