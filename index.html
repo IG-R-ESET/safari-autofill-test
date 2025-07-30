@@ -2,52 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Safari Autofill Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keychain Icon Test</title>
   <style>
     body {
       font-family: sans-serif;
       padding: 2rem;
-      background: #f5f5f5;
+      background: #f9f9f9;
     }
     label {
       display: block;
-      margin-top: 1.5rem;
-      font-weight: bold;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
     }
     input {
-      padding: 0.5rem;
       width: 100%;
-      max-width: 400px;
-      margin-top: 0.3rem;
-      font-size: 1rem;
-    }
-    button {
-      margin-top: 2rem;
-      padding: 0.7rem 1.5rem;
+      padding: 0.6rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
       font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <h2>Sign Up Form (Safari Autofill Test)</h2>
-  <form action="/" method="POST" autocomplete="on">
-    
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username" autocomplete="username" placeholder="yourname123" required />
-    
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" autocomplete="email" placeholder="you@example.com" />
 
+  <h2>Test Form – Hide Keychain Icon</h2>
+
+  <form autocomplete="off">
+    <!-- Name field with autocomplete off -->
+    <label for="display_name">Display Name</label>
+    <input 
+      type="text"
+      id="display_name"
+      name="display_name"
+      autocomplete="off"
+      placeholder="No key icon expected" />
+
+    <!-- Email field with trick autocomplete off -->
+    <label for="recovery_address">Recovery Email (optional)</label>
+    <input 
+      type="text"
+      id="recovery_address"
+      name="recovery_address"
+      inputmode="email"
+      autocomplete="off"
+      placeholder="No key icon expected" />
+
+    <!-- Username field, disguised -->
+    <label for="user_tag">Tag / Handle</label>
+    <input 
+      type="text"
+      id="user_tag"
+      name="user_tag"
+      autocomplete="off"
+      autocapitalize="off"
+      placeholder="No key icon expected" />
+    
+    <!-- Password field, will show key icon -->
     <label for="password">Password</label>
-    <input type="password" name="password" id="password" autocomplete="new-password" placeholder="Create a password" required />
+    <input 
+      type="password"
+      id="password"
+      name="password"
+      autocomplete="new-password"
+      placeholder="Key icon expected here" />
 
-    <button type="submit">Submit</button>
-
-    <label for="confirm_password">Confirm Password</label>
-    <input type="password" name="confirm_password" id="confirm_password" autocomplete="new-password" placeholder="Repeat password" required />
-
+    <!-- Confirm Password field -->
+    <label for="confirm">Confirm Password</label>
+    <input 
+      type="password"
+      id="confirm"
+      name="confirm"
+      autocomplete="new-password"
+      placeholder="Key icon expected here" />
   </form>
+
 </body>
 </html>
-
