@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Safari Autofill Test2</title>
+  <title>Safari Autofill Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
@@ -19,4 +19,35 @@
       padding: 0.5rem;
       width: 100%;
       max-width: 400px;
-      margin-top:
+      margin-top: 0.3rem;
+      font-size: 1rem;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>Sign Up Form (Safari Autofill Test)</h2>
+  <form action="/" method="POST" autocomplete="on">
+    
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" autocomplete="username" placeholder="yourname123" required />
+    
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" autocomplete="email" placeholder="you@example.com" />
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" autocomplete="new-password" placeholder="Create a password" required />
+
+    <button type="submit">Submit</button>
+
+    <label for="confirm_password">Confirm Password</label>
+    <input type="password" name="confirm_password" id="confirm_password" autocomplete="new-password" placeholder="Repeat password" required />
+
+  </form>
+</body>
+</html>
+
